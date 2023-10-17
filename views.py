@@ -39,7 +39,7 @@ def cadastro(request):
             #messages.add_message(request, constants.INFO, 'SUA SENHA DEVE CONTER MAIS DE 6 CARACTERES')
             #return redirect('/usuarios/cadastro')
         #elif senha1 == confirma:
-            #return HttpResponse("boa FILHA DA PUTA ")
+            #return HttpResponse("boa")
 
         user = User.objects.create_user(
             first_name = nome,
@@ -69,7 +69,7 @@ def logar(request):
         user = authenticate(username=username, password=senha)
         if user:
             login(request, user)
-    # Acontecerá um erro ao redirecionar por enquanto, resolveremos nos próximos passos
+    
             return redirect('/exames/solicitar_exames/')
             #return HttpResponse("logado")
 
